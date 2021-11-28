@@ -1,0 +1,117 @@
+* {
+    font-family: 'Cormorant Garamond', serif;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: url("https://giphy.com/embed/iFt3TmyE4xrPur8Fvv") 
+}
+.form{
+    background: rgb(143,143,143);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 1%, rgb(168, 252, 0) 50%);
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 15px;
+    
+}
+.items{
+    background-color: rgba(194, 194, 194,.9);
+    color: rgb(80, 64, 0);
+    width: 400px;
+    margin: 20px;
+    border-radius: 10px;
+}
+.single{
+    text-align: center;
+    min-height: 100vh;
+    background-image: url('https://i.gifer.com/origin/49/49eb489e1346e5ce3bd67ee92cdf0b2d.gif');
+    background-size: contain;
+    display: flex;
+}
+.left{
+    width: 50vw;
+}
+form {
+    width: 50vw;
+    margin-left:auto;
+}
+.see{
+    background: rgba(49,186,28,.7);
+    background: radial-gradient(circle, rgb(186 247 0) 10%, rgba(112,112,112,1) 90%);
+    display: inline-block;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+.listBtn{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.pbtn {
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: rgba(168, 159, 159,.9);
+    margin: 5px;
+    padding: 10px;
+    box-shadow: none;
+}
+.submit{
+    padding: 20px;
+    border: 3px solid red;
+    background: wheat;
+    border-radius: 10px;
+}
+.listReactions{
+    margin: 20px;
+    padding: 20px;
+    background: rgb(168, 159, 159);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.listPrinciples{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    background: rgb(168, 159, 159);
+}
+.guide{
+    width: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: rgb(0, 0, 0);
+}
+.pbtn input[type="radio"] {
+    display: none;
+}
+input[type="radio"]:checked {
+    border: 5px solid #ff3f00e8;
+}
+.editor{
+    background-color: darkgray;
+    width: 50vw;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .listTop{
+    background-color: #8f8f8f;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid black;
+} */
