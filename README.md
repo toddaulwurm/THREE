@@ -1,3 +1,6 @@
+HEY, Thanks for checking out my game! To start, please go to client/src/config.js and set your ip address for socket usage. :)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
