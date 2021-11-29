@@ -1,4 +1,4 @@
-HEY, Thanks for checking out my game! To start, please go to client/src/config.js and set your ip address for socket usage. :)
+HEY, Thanks for checking out my game! To start, please go to client/src/config.js and set your ip address for socket usage. (ipconfig) :)
 
 
 # Getting Started with Create React App
