@@ -97,24 +97,24 @@ const Detail = (props) => {
                         </div>
                         <div className={style.minis}>
                             <div><strong>BEFORE PLAY:</strong>Three players and a GM must create one collective Character and their given circumstances. <br/> <br/>The only unchangable factor is that the character unknowingly has an incurable illness and will die suddenly in less than a year.</div><br/>
-                            <div>The GM will then craft a regular life for that character with a series of mundane scenarios needing guidance for a response.</div> 
+                            <div>The GM will then craft a regular life for that character with a series of scenarios, ranging from mundane to serious, all in need of a response.</div> 
                         </div><br/>
                         <div className={style.minis}>   
                             <div><strong>DURING PLAY:</strong> In each scenario, right when the character would have a chance to react, each player chooses the principle that they deem most important for the character at that time.<br/>(Keeping in mind the dramatic irony of the situation.)</div><br/>
                             <div><strong>The Players will stay silent during the day and may only communicate while the character is asleep.</strong> <br/><em>DM: The Players' conversations may become the Character's dream that night.</em></div>
                         </div><br/>
                         <div className={style.minis}>   
-                            <div><strong>END OF GAME:</strong> Throughout the game, you may accumulate headaches. If you gain 3, your character is overtaken by their illness and the game is over.
+                            <div><strong>END OF GAME:</strong> Throughout the game, you may accumulate headaches. If you gain 3, your character is overtaken by their illness and the game is over.<br/><br/><strong>GOAL:</strong> It is your goal to guide the character to unkowningly live their last days in the best way possible. 
                             </div>
                         </div>
                         <div className={style.minis}>   
                             <div> 
                                 <h4>Reaction Calculator:</h4>           
-                                    <h4 class="text">More than 1 "Abstain": <em>Character gets headache.</em></h4>
-                                    <h4 class="text">All Different Principles: <em>Character gets headache.</em></h4>
-                                    <h4 class="text">All Same Principle: <em>Character uses that principle. Or Less.*</em></h4>
-                                    <h4 class="text">2 Different Principles: <em>Character uses both principles.*</em></h4>
-                                    <h4 class="text">2 Same 1 Different: <em>Positive for popular principle. Negative for singular principle.</em></h4>
+                                    <h5 class="text">More than 1 "Abstain": <em>Character gets headache.</em></h5>
+                                    <h5 class="text">All Different Principles: <em>Character gets headache.</em></h5>
+                                    <h5 class="text">2 Same 1 Different: <em>Popular principle twisted negatively by the singular principle.</em></h5>
+                                    <h5 class="text">All Same Principle: <em>Very Positive for that principle. Or Less.*</em></h5>
+                                    <h5 class="text">2 Different Principles: <em>Positive for both principles.*</em></h5>
                                 <h6><em>*in event of 1 Abstain</em> </h6>  
                             </div>
                         </div>
@@ -154,11 +154,11 @@ const Detail = (props) => {
                     } 
                     {selectedItem==5 &&
                         <h2 className={style.see} for="principles"><strong>PRIDE</strong><br/>
-                        My value / Their Judgement </h2>
+                        My Value | Their Judgement </h2>
                     } 
                     {selectedItem==6 &&
                         <h2 className={style.see} for="principles"><strong>EMPATHY</strong><br/>
-                        Their value / My Judgement </h2>
+                        I Care | Who Cares? </h2>
                     } 
 
             
