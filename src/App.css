@@ -12,6 +12,7 @@
   display: flex;
   font-size: calc(5px + 2vmin);
   color: rgb(186 247 0);
+  font-family: 'Cormorant Garamond', serif;
 }
 .span{
   white-space: nowrap;

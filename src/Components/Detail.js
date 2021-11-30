@@ -29,7 +29,7 @@ const Detail = (props) => {
     
     // button select styling vvv
     const [selectedItem, setSelectedItem] = useState(-1);
-    const selectStyle = {border: "10px solid red"};
+    const selectStyle = {border: "10px solid red", borderRadius:"10px"};
     const notSelectedStyle = {};
     
     useEffect(() => {
@@ -87,27 +87,88 @@ const Detail = (props) => {
     return (
         <div className={style.single}>
             <div className={style.left}>
-                <br/>
                 <div className={style.see}>
-                    <h1>{Game.title}</h1>
-                    <h3>DM: {Game.dm}</h3>
-                    <Link to={"/Games/" + Game._id + "/edit"}>
-                        <button>Edit</button>
-                    </Link>
-                </div><br/>
+                        <div className={style.instruct}>
+                            <h1>{Game.title}</h1>
+                            <h1>DM: {Game.dm}</h1>
+                            <Link to={"/Games/" + Game._id + "/edit"}>
+                                <button className={style.submit}>Edit</button>
+                            </Link>
+                        </div>
+                        <div className={style.minis}>
+                            <div><strong>BEFORE PLAY:</strong>Three players and a GM must create one collective Character and their given circumstances. <br/> <br/>The only unchangable factor is that the character unknowingly has an incurable illness and will die suddenly in less than a year.</div><br/>
+                            <div>The GM will then craft a regular life for that character with a series of mundane scenarios needing guidance for a response.</div> 
+                        </div><br/>
+                        <div className={style.minis}>   
+                            <div><strong>DURING PLAY:</strong> In each scenario, right when the character would have a chance to react, each player chooses the principle that they deem most important for the character at that time.<br/>(Keeping in mind the dramatic irony of the situation.)</div><br/>
+                            <div><strong>The Players will stay silent during the day and may only communicate while the character is asleep.</strong> <br/><em>DM: The Players' conversations may become the Character's dream that night.</em></div>
+                        </div><br/>
+                        <div className={style.minis}>   
+                            <div><strong>END OF GAME:</strong> Throughout the game, you may accumulate headaches. If you gain 3, your character is overtaken by their illness and the game is over.
+                            </div>
+                        </div>
+                        <div className={style.minis}>   
+                            <div> 
+                                <h4>Reaction Calculator:</h4>           
+                                    <h4 class="text">More than 1 "Abstain": <em>Character gets headache.</em></h4>
+                                    <h4 class="text">All Different Principles: <em>Character gets headache.</em></h4>
+                                    <h4 class="text">All Same Principle: <em>Character uses that principle. Or Less.*</em></h4>
+                                    <h4 class="text">2 Different Principles: <em>Character uses both principles.*</em></h4>
+                                    <h4 class="text">2 Same 1 Different: <em>Positive for popular principle. Negative for singular principle.</em></h4>
+                                <h6><em>*in event of 1 Abstain</em> </h6>  
+                            </div>
+                        </div>
+                </div>
+            </div>
 
+            <div className={style.left}>
+
+                <div className={style.listPrinciples}>
+                    <h1>{principles.length} Principles Submitted</h1>
+                    <h1 style={selectStyle}>{headaches} Headaches</h1>
+                </div>
 
                 {headaches<3 &&
                 <div>
-                <h2 className={style.listReactions} for="principles"><strong>Choose a Principle:</strong></h2>
+                    {selectedItem==-1 &&
+                        <h2 className={style.see} for="principles"><strong>Wait for your DM's signal to choose a principle...</strong></h2>
+                    } 
+                    {selectedItem==0 &&
+                        <h2 className={style.see} for="principles"><strong>More than 1 Abstain will cause a headache...</strong></h2>
+                    } 
+                    {selectedItem==1 &&
+                        <h2 className={style.see} for="principles"><strong>PEACE</strong><br/>
+                        Everyone is a friend | Everyone is a foe</h2>
+                    }
+                    {selectedItem==2 &&
+                        <h2 className={style.see} for="principles"><strong>LOVE</strong><br/>
+                        Someone is attractive | Someone is repulsive</h2>
+                    } 
+                    {selectedItem==3 &&
+                        <h2 className={style.see} for="principles"><strong>JOY</strong><br/>
+                        Today is bright | Today is dark</h2>
+                    } 
+                    {selectedItem==4 &&
+                        <h2 className={style.see} for="principles"><strong>HOPE</strong><br/> 
+                        Tomorrow is bright | Tomorrow is dark </h2>
+                    } 
+                    {selectedItem==5 &&
+                        <h2 className={style.see} for="principles"><strong>PRIDE</strong><br/>
+                        My value / Their Judgement </h2>
+                    } 
+                    {selectedItem==6 &&
+                        <h2 className={style.see} for="principles"><strong>EMPATHY</strong><br/>
+                        Their value / My Judgement </h2>
+                    } 
 
+            
                 <form onSubmit={onSubmitHandler}>
                     <div className={style.listBtn}>
                         <div className={style.pbtn} style={selectedItem==1?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Peace" name="principle" value="1" onChange={onChangeHandler}/>
                             <label for="Peace">Peace</label><br/><img src="https://img.icons8.com/windows/60/463838/leaf.png"/><br/>
                         </div>
-
+            
                         <div className={style.pbtn} style={selectedItem==0?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Abstain" name="principle" value="0" onChange={onChangeHandler}/>
                             <label for="Abstain">Abstain</label><br/><img src="https://img.icons8.com/ios-filled/50/000000/x.png"/><br/>
@@ -117,78 +178,48 @@ const Detail = (props) => {
                             <label for="Love">Love</label><br/><img class="loveBtn" src="https://img.icons8.com/android/60/2237cc/fire-element.png"/><br/>
                         </div>
                     </div>
-
+            
                     <div className={style.list}>
                         <div className={style.pbtn} style={selectedItem==3?selectStyle:notSelectedStyle} >
                             <input type="radio" id="Joy" name="principle" value="3" onChange={onChangeHandler}/>
                             <label for="Joy">Joy</label><br/><img class="joyBtn" src="https://img.icons8.com/ios/60/f1f950/  lightning-bolt--v1.png"/><br/>
                         </div>
-
+            
                         <div className={style.pbtn} style={selectedItem==5?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Pride" name="principle" value="5" onChange={onChangeHandler}/>
                             <label for="Pride">Pride</label><br/><img class="prideBtn" src="https://img.icons8.com/ios/60/892e94/sparkling.png"/><br/>
                         </div>
 
+                    <input className={style.submit} type="submit"/>
+            
                         <div className={style.pbtn} style={selectedItem==6?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Empathy" name="principle" value="6" onChange={onChangeHandler}/>
                             <label for="Empathy">Empathy</label><br/><img class="empathyBtn" src="https://img.icons8.com/ios-glyphs/60/6f3d0a/globe-earth--v1.png"/><br/>
                         </div>
-
+            
                         <div className={style.pbtn} style={selectedItem==4?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Hope" name="principle" value="4" onChange={onChangeHandler}/>
                             <label for="Hope">Hope</label><br/><img class="hopeBtn" src="https://img.icons8.com/material-outlined/60/0c7710/sun--v1.png"/><br/>
                         </div>
                     </div>
-
-                    <input className={style.submit} type="submit"/>
                 </form>
             </div>
             }
-            {
-                headaches== 3 && 
-                <div>
-                    <h1>GAME OVER</h1>
-                    <h3>Character sustained 3<br/> mysterious headaches and died.</h3>
-                </div>
-            }
-            </div>
-
-            <div className={style.left}>
-                <h1 className={style.see}>Reaction History</h1>
-                <div className={style.listReactions}>
+            <div className={style.listReactions}>
+                <h3>Your Diary:</h3>
                     {
                         reactions.map((reaction,i)=>{
                             return <h3 key={i}>{reaction}, </h3>
                         })
                     }
-                </div>
-
-                <div className={style.listPrinciples}>
-                    <h1>{principles.length} Principles Submitted</h1>
-                    <h1 style={selectStyle}>{headaches} Headaches</h1>
-                </div>
-
+            </div>
+            {
+                headaches== 3 && 
                 <div className={style.see}>
-                    <h3>The 6 Principles</h3>
-                    <div className={style.guide}>
-                        <div>
-                            <p class="text"><strong>PEACE</strong><br/>
-                            Everyone is a friend | Everyone is a foe</p>
-                            <p class="text"><strong>JOY</strong><br/>
-                            Today is bright | Today is dark <br/></p>
-                            <p class="text"><strong>PRIDE</strong><br/>
-                            My value / Their Judgement <br/></p>
-                        </div>
-                        <div>
-                            <p class="text"><strong>LOVE</strong><br/>
-                            Someone is attractive | Someone is repulsive <br/></p>
-                            <p class="text"><strong>HOPE</strong><br/> 
-                            Tomorrow is bright | Tomorrow is dark <br/></p>
-                            <p class="text"><strong>EMPATHY</strong><br/>
-                            Their value / My Judgement <br/></p>
-                        </div>
-                    </div>
+                    <h1>GAME OVER</h1>
+                    <h3>The character was overcome by their illness.</h3>
                 </div>
+            }
             </div>
         </div>
     )
@@ -223,7 +254,32 @@ export default Detail;
 //     setIds(IDs=>{return{...IDs}})
 // }
 // else if(ids.Player3===""&&ids.DM!=bundle.id&&ids.Player1!=bundle.id&&ids.Player2!=bundle.id){
-//     ids.Player3=bundle.id
-//     setIds(IDs=>{return{...IDs}})
-// }
+    //     ids.Player3=bundle.id
+    //     setIds(IDs=>{return{...IDs}})
+    // }
 // console.log("THE ID IS", ids) */}
+
+
+
+
+{/* <div className={style.see}>
+    <h3>The 6 Principles</h3>
+    <div className={style.guide}>
+        <div>
+            <p class="text"><strong>PEACE</strong><br/>
+            Everyone is a friend | Everyone is a foe</p>
+            <p class="text"><strong>JOY</strong><br/>
+            Today is bright | Today is dark <br/></p>
+            <p class="text"><strong>PRIDE</strong><br/>
+            My value / Their Judgement <br/></p>
+        </div>
+        <div>
+            <p class="text"><strong>LOVE</strong><br/>
+            Someone is attractive | Someone is repulsive <br/></p>
+            <p class="text"><strong>HOPE</strong><br/> 
+            Tomorrow is bright | Tomorrow is dark <br/></p>
+            <p class="text"><strong>EMPATHY</strong><br/>
+            Their value / My Judgement <br/></p>
+        </div>
+    </div>
+</div> */}

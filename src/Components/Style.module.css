@@ -1,10 +1,10 @@
-* {
-    font-family: 'Cormorant Garamond', serif;
-}
+
 .list{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    min-width: 475px;
     background-image: url("https://giphy.com/embed/iFt3TmyE4xrPur8Fvv") 
 }
 .form{
@@ -13,7 +13,6 @@
     margin-left: 35%;
     margin-right: 35%;
     padding: 15px;
-    
 }
 .items{
     background-color: rgba(194, 194, 194,.9);
@@ -42,39 +41,60 @@ form {
     display: inline-block;
     padding: 20px;
     color: rgb(0, 0, 0);
+    border-radius: 5px;
+    font-family: 'Cormorant Garamond', serif;
 }
 .listBtn{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    min-width: 475px;
 }
 .pbtn {
     border: 2px solid black;
     border-radius: 50%;
-    background-color: rgba(168, 159, 159,.9);
+    background-color: rgba(160, 160, 160, 0.9);
     margin: 5px;
     padding: 10px;
     box-shadow: none;
 }
 .submit{
-    padding: 20px;
-    border: 3px solid red;
-    background: wheat;
+    padding: 10px;
+    background: rgb(168, 252, 0);
+    color: black;
     border-radius: 10px;
+    font-family: 'Cormorant Garamond', serif;
 }
 .listReactions{
-    margin: 20px;
     padding: 20px;
     background: rgb(168, 159, 159);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    border-radius: 5px;
+    min-width: auto;
 }
 .listPrinciples{
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    align-items: center;
     background: rgb(168, 159, 159);
+    border-radius: 5px;
+    min-width: 400px;
+}
+.instruct{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.minis{
+    background: black;
+    color: rgb(168, 159, 159);
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 .guide{
     width: 40vw;
