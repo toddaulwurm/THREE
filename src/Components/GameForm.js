@@ -4,7 +4,10 @@ import {useHistory } from "react-router-dom";
 import style from "./Style.module.css"
 import {ip} from '../configs';
 
+
 export default ()=>{
+
+
     const history = useHistory();
 
     // Title Form
