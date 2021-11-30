@@ -29,7 +29,7 @@ const Detail = (props) => {
     
     // button select styling vvv
     const [selectedItem, setSelectedItem] = useState(-1);
-    const selectStyle = {border: "10px solid red", borderRadius:"10px"};
+    const selectStyle = {border: "2px solid orange", borderRadius:"10px"};
     const notSelectedStyle = {};
     
     useEffect(() => {
@@ -166,7 +166,7 @@ const Detail = (props) => {
                     <div className={style.listBtn}>
                         <div className={style.pbtn} style={selectedItem==1?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Peace" name="principle" value="1" onChange={onChangeHandler}/>
-                            <label for="Peace">Peace</label><br/><img src="https://img.icons8.com/windows/60/463838/leaf.png"/><br/>
+                            <label for="Peace">Peace</label><br/><img src="https://img.icons8.com/windows/60/453018/leaf.png"/><br/>
                         </div>
             
                         <div className={style.pbtn} style={selectedItem==0?selectStyle:notSelectedStyle}>
@@ -194,7 +194,7 @@ const Detail = (props) => {
             
                         <div className={style.pbtn} style={selectedItem==6?selectStyle:notSelectedStyle}>
                             <input type="radio" id="Empathy" name="principle" value="6" onChange={onChangeHandler}/>
-                            <label for="Empathy">Empathy</label><br/><img class="empathyBtn" src="https://img.icons8.com/ios-glyphs/60/6f3d0a/globe-earth--v1.png"/><br/>
+                            <label for="Empathy">Empathy</label><br/><img class="empathyBtn" src="https://img.icons8.com/ios-glyphs/60/a65a03/globe-earth--v1.png"/><br/>
                         </div>
             
                         <div className={style.pbtn} style={selectedItem==4?selectStyle:notSelectedStyle}>
@@ -206,12 +206,15 @@ const Detail = (props) => {
             </div>
             }
             <div className={style.listReactions}>
-                <h3>Your Diary:</h3>
+                <h3 className={style.see}>YOUR LATEST REACTION: <br/>{reactions[reactions.length-1]}</h3><br/>
+                <h3 className={style.minis}>YOUR DIARY:</h3>
+                <div className={style.listBtn}>
                     {
-                        reactions.map((reaction,i)=>{
+                        reactions.slice(0).reverse().map((reaction,i)=>{
                             return <h3 key={i}>{reaction}, </h3>
                         })
                     }
+                </div>
             </div>
             {
                 headaches== 3 && 

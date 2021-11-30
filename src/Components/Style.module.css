@@ -66,10 +66,7 @@ form {
     font-family: 'Cormorant Garamond', serif;
 }
 .listReactions{
-    padding: 20px;
     background: rgb(168, 159, 159);
-    display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     border-radius: 5px;
     min-width: auto;
