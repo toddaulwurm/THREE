@@ -1,5 +1,10 @@
 HEY, Thanks for checking out my game! To start, please go to client/src/config.js and set your ip address for socket usage. (ipconfig) :)
 
+then 
+nodemon server.js 
+then 
+npm start (inside /client)
+
 
 # Getting Started with Create React App
 
